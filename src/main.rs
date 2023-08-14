@@ -30,7 +30,7 @@ async fn main() {
         let signed_distance_field = |x, y| x * x + y * y - r * r;
         let mut x = r;
         let mut y = 0;
-        while y < r * 10 / 14 {
+        while y < (r * 10 / 14) + 1 {
             draw_point(x, y, grid_size);
             draw_point(-x, y, grid_size);
             draw_point(x, -y, grid_size);
