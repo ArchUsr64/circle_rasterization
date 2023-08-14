@@ -50,7 +50,7 @@ async fn main() {
         }
         if is_key_down(KeyCode::Equal) {
             grid_size += 1;
-        } else if is_key_down(KeyCode::Minus) {
+        } else if is_key_down(KeyCode::Minus) && grid_size > 4 {
             grid_size -= 1;
         }
         let signed_distance_field = |x, y| x * x + y * y - r * r;
