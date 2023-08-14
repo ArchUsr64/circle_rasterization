@@ -9,4 +9,5 @@ Based on Bresenham's algorithm
 
 ## Controls
 The viewport is rasterized into a square grid with the circle radius being normalized to the grid.  
-Use mouse wheel to adjust the radius of the circle and `+` or `-` key to adjust the grid size.
+Use mouse wheel to adjust the radius of the circle and `+` or `-` key to adjust the grid size.  
+To switch between light and dark mode, use the `L` and `D` key.
