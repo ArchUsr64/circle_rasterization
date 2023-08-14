@@ -17,11 +17,26 @@ fn draw_point(x: isize, y: isize, grid_size: usize) {
 
 #[macroquad::main("Circle Rasterizer")]
 async fn main() {
-    let mut r_normalized = 0.8;
+    let mut r_normalized = 0.8f32;
     let mut grid_size = 200;
     loop {
-        let r = (r_normalized * grid_size as f32) as isize / 2;
+        let font_size = screen_height() / 20.;
+        draw_text(
+            format!("Radius: {r_normalized:.02}").as_str(),
+            0.,
+            font_size,
+            font_size,
+            WHITE,
+        );
+        draw_text(
+            format!("Grid Size: {grid_size}").as_str(),
+            0.,
+            font_size * 2.,
+            font_size,
+            WHITE,
+        );
         r_normalized += mouse_wheel().1 / 100.;
+        let r = (r_normalized.abs() * grid_size as f32) as isize / 2;
         if is_key_down(KeyCode::Equal) {
             grid_size += 1;
         } else if is_key_down(KeyCode::Minus) {
